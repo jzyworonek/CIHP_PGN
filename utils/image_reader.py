@@ -257,7 +257,7 @@ class ImageReader(object):
                                                               self.edges])
                                                         ).shuffle(len(self.images))
         print(self.queue)
-        self.image, self.label, self.edge = read_images_from_disk(self.queue,
+        self.image, self.label, self.edge = read_images_from_disk(self.queue.as_numpy_iterator(),
                                                                   self.input_size,
                                                                   random_scale,
                                                                   random_mirror)
