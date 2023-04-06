@@ -1,6 +1,6 @@
 import numpy as np
 import tensorflow as tf
-slim = tf.contrib.slim
+slim = tf.compat.v1.estimator.slim
 
 DEFAULT_PADDING = 'SAME'
 
