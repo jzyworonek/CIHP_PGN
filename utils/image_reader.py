@@ -255,7 +255,7 @@ class ImageReader(object):
         self.queue = tf.data.Dataset.from_tensor_slices(tuple([self.images,
                                                               self.labels,
                                                               self.edges])
-                                                        ).shuffle()
+                                                        ).shuffle(len(self.images))
         print(self.queue)
         self.image, self.label, self.edge = read_images_from_disk(self.queue,
                                                                   self.input_size,

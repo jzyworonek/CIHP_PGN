@@ -221,7 +221,7 @@ class ImageReaderPGN(object):
         self.labels = tf.convert_to_tensor(self.label_list, dtype=tf.string)
         self.labels_rev = tf.convert_to_tensor(self.label_rev_list, dtype=tf.string)
         self.edges = tf.convert_to_tensor(self.edge_list, dtype=tf.string)
-        self.queue = tf.data.Dataset.from_tensor_slices(tuple([self.images, self.labels, self.labels_rev, self.edges])).shuffle()
+        self.queue = tf.data.Dataset.from_tensor_slices(tuple([self.images, self.labels, self.labels_rev, self.edges])).shuffle(len(self.images))
         self.image, self.label, self.edge = read_images_from_disk(self.queue, self.input_size, random_scale, random_mirror) 
 
     def dequeue(self, num_elements):
