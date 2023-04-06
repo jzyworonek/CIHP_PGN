@@ -5,3 +5,4 @@ model/
 *.pyc
 venv/
 *.idea*
+report.txt
